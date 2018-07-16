@@ -61,7 +61,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 nav {
   display: flex;
   width: 100%;
-  height: 80px;
+  height: 4.5rem;
   background-color: #252831;
   text-align:center;
 }
@@ -69,9 +69,9 @@ nav h1 {
   margin: auto;
 }
 nav h1 a {
-  width: 100%;
+  /*width: 100%;*/
   color: #fff;
-  font-size: 1rem;
+  /*font-size: 1.6rem;*/
   font-weight: 200;
   letter-spacing: 10px;
   text-transform: uppercase;
@@ -173,7 +173,7 @@ nav h1 a {
 #restaurants-list .restaurant-img {
   background-color: #ccc;
   display: block;
-	border-radius: 50px 0 0 0;
+	border-radius: 2rem 0 0 0;
   margin: 0;
 	padding: 0;
   /*max-width: 100%;*/
@@ -236,6 +236,20 @@ nav h1 a {
   padding: 1rem 0;
   width: 100%;
 }*/
+#restaurant-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+#restaurant-container, #reviews-container {
+  border-bottom: 1px solid #d9d9d9;
+  border-top: 1px solid #fff;
+  padding: 1rem;
+  /*padding: 140px 40px 30px;
+  width: 100%;*/
+}
 #restaurant-name {
   color: #f18200;
   font-family: Arial,sans-serif;
@@ -247,11 +261,8 @@ nav h1 a {
   line-height: 1.1;
 }
 #restaurant-img {
-	width: 90%;
-}
-#restaurant-address {
-  font-size: 12pt;
-  margin: 10px 0px;
+	border-radius: 2rem 0 0;
+	/*width: 90%;*/
 }
 #restaurant-cuisine {
   background-color: #252831;
@@ -259,21 +270,24 @@ nav h1 a {
   font-size: 12pt;
   font-weight: 300;
   letter-spacing: 10px;
-  margin: 0 0 20px;
+  margin: 0;
   padding: 2px 0;
   text-align: center;
   text-transform: uppercase;
-	width: 90%;
+	width: 100%;
 }
-#restaurant-container, #reviews-container {
-  border-bottom: 1px solid #d9d9d9;
-  border-top: 1px solid #fff;
-  /*padding: 140px 40px 30px;
-  width: 100%;*/
+#restaurant-info {
+  background-color: #fff;
+  width: 100%;
+  border-radius: 0 0 2rem;
+  padding: 0 1rem 1rem;
 }
-#reviews-container {
+#restaurant-address {
+  font-weight: bold;
+}
+/*#reviews-container {
   padding: 1rem;
-}
+}*/
 #reviews-container h2 {
   color: #f58500;
   font-size: 24pt;
@@ -319,7 +333,7 @@ nav h1 a {
 .review-date {
   color: #d3d3d3;
   margin: 0;
-  padding: 1rem 1rem 1rem 0;
+  padding: 1rem 1rem 1.5rem 0;
   font-size: 0.8rem;
 
 }
