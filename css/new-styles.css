@@ -386,6 +386,12 @@ nav h1 a {
   }
 }
 
+@media screen and (min-width: 619px) {
+  .filter-options {
+    flex-direction: row;
+  }
+}
+
 @media screen and (min-width: 801px) {
   #restaurants-list li {
     flex-basis: 30%;
