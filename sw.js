@@ -1,5 +1,5 @@
 /* Set up cache variables */
-var staticCacheName = 'restaurants-static-v4';
+var staticCacheName = 'restaurants-static-v6';
 var urlsToCache = [
   '/',
   '/index.html',
@@ -34,16 +34,14 @@ self.addEventListener('install', (event) => {
 
 /* Delete old cache and replace on activation of new SW */
 self.addEventListener('activate', function(event) {
-
-  var cacheWhitelist = [staticCacheName];
-
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
       return Promise.all(
-        cacheNames.map(function(cacheName) {
-          if (cacheWhitelist.indexOf(cacheName) === -1) {
-            return caches.delete(cacheName);
-          }
+        cacheNames.filter(function(cacheName) {
+          return cacheName.startsWith('restaurants-') &&
+                 cacheName != staticCacheName;
+        }).map(function(cacheName) {
+          return caches.delete(cacheName);
         })
       );
     })
