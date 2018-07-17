@@ -1,5 +1,4 @@
 /* Set up initial cache */
-
 var staticCacheName = 'restaurant-reviews-static-v4';
 
 self.addEventListener('install', event => {
@@ -29,7 +28,6 @@ self.addEventListener('install', event => {
 });
 
 /* Delete old cache and replace on activation of new SW */
-
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then( cacheNames => {
@@ -48,7 +46,6 @@ self.addEventListener('activate', event => {
 /* Serve pages from cache if available
  * Ensure restaurant detail page is served regardless of ?id in url
 */
-
 self.addEventListener('fetch', event => {
   let requestURL = event.request.url;
 
