@@ -1,10 +1,10 @@
 /* Set up initial cache */
 
-var staticCacheName = 'restaurant-reviews-static-v3';
+var staticCacheName = 'restaurant-reviews-static-v4';
 
-self.addEventListener('install', function(event) {
+self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(staticCacheName).then(function(cache) {
+    caches.open(staticCacheName).then( cache => {
       return cache.addAll([
         '/index.html',
         '/restaurant.html',
@@ -30,14 +30,14 @@ self.addEventListener('install', function(event) {
 
 /* Delete old cache and replace on activation of new SW */
 
-self.addEventListener('activate', function(event) {
+self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(function(cacheNames) {
+    caches.keys().then( cacheNames => {
       return Promise.all(
-        cacheNames.filter(function(cacheName) {
+        cacheNames.filter( cacheName => {
           return cacheName.startsWith('restaurant-reviews-') &&
                  cacheName != staticCacheName;
-        }).map(function(cacheName) {
+        }).map( cacheName => {
           return caches.delete(cacheName);
         })
       );
@@ -65,5 +65,3 @@ self.addEventListener('fetch', event => {
     })
   );
 });
-
-/* Cache maps when visited */
