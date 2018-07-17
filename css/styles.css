@@ -26,7 +26,11 @@ a {
 }
 a:hover, a:focus {
 	color: #3397db;
-	text-decoration: none;
+	text-decoration: underline;
+}
+:focus {
+  outline: 0.3rem solid #3397db;
+  box-shadow: 0 0 8px 8px #ccc;
 }
 a img {
 	border: none 0px #fff;
@@ -115,6 +119,9 @@ nav h1 a {
   width: 100%;
   background-color: #ccc;
 }
+#map:focus {
+  box-shadow: 0 0 8px 8px red;
+}
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
   /*width: 100%;*/
@@ -145,6 +152,9 @@ nav h1 a {
   margin: 10px;
   padding: 0 10px;
   width: 200px;
+}
+.filter-options select:focus {
+  box-shadow: 0 0 8px 8px #ccc;
 }
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
